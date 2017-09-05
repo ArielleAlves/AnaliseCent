@@ -14,10 +14,9 @@ import javax.swing.table.DefaultTableModel;
  * @author alves
  */
 public class Umidade extends javax.swing.JDialog {
-    private JDialog umidade;
-    
-    TelaInicio resultado1;
-    
+    private double inserir1;
+    private double inserir2;
+    private double inserir3; 
 
 
     /**
@@ -28,9 +27,9 @@ public class Umidade extends javax.swing.JDialog {
         initComponents();
         
     }
-    public JTextField umidade1;
-    public JTextField umidade2;
-    public JTextField umidade3;
+    
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -420,14 +419,11 @@ public class Umidade extends javax.swing.JDialog {
 
     private void btninserirumidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninserirumidadeActionPerformed
         // TODO add your handling code here:
-        this.hide();
+        this.inserir1 = Double.parseDouble(this.txtresultado1.getText());
+        this.inserir2 = Double.parseDouble(this.txtresultado2.getText());
+        this.inserir3 = Double.parseDouble(this.txtresultado3.getText());
         this.dispose();     
-        
-        if(resultado1 == null){
-            resultado1. recebeUmidade(txtresultado1.getText());
-        }
-        
-      
+          
     }//GEN-LAST:event_btninserirumidadeActionPerformed
 
     private void btncalcular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncalcular1ActionPerformed
@@ -578,4 +574,35 @@ public class Umidade extends javax.swing.JDialog {
     private javax.swing.JTextField txtvarianciaumidade;
     // End of variables declaration//GEN-END:variables
 
+    public double getInserir1() {
+        return inserir1;
+    }
+
+    public void setInserir1(double  inserir1) {
+        this.inserir1 = inserir1;
+    }
+
+    
+    
+    public double getInserir2() {
+        return inserir2;
+    }
+
+    public void setInserir2(double inserir2) {
+        this.inserir2 = inserir2;
+    }
+
+    
+    
+    public double getInserir3() {
+        return inserir3;
+    }
+
+    public void setInserir3(double inserir3) {
+        this.inserir3 = inserir3;
+    }
+    
+    
+    
+    
 }

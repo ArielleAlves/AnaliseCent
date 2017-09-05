@@ -15,15 +15,19 @@ import javax.swing.table.DefaultTableModel;
  * @author alves
  */
 public class TelaInicio extends javax.swing.JFrame {
+    
+    private Umidade umid;
 
     /**
      * Creates new form TelaInicio
      */
     public TelaInicio() {
         initComponents();
+        
+       this.umid = new Umidade (this, true); 
     }
-
     
+       
 public static void updateTable1    (){
         List<MinhaClasse> list = new ArrayList<>();
         
@@ -137,10 +141,29 @@ private class MinhaClasse3   {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         amostra2 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btnLipidios = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        Umidade3table = new javax.swing.JTextField();
+        Umidade1table = new javax.swing.JTextField();
+        Umidade2table = new javax.swing.JTextField();
+        Cinzas1table = new javax.swing.JTextField();
+        Cinzas2table = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        Proteinas1table = new javax.swing.JTextField();
+        Proteinas2table = new javax.swing.JTextField();
+        Lipidios1table = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        Lipidios2table = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        InserirAmostra1 = new javax.swing.JButton();
+        InserirAmostra2 = new javax.swing.JButton();
+        InserirAmostra3 = new javax.swing.JButton();
+        Fibras1table = new javax.swing.JTextField();
+        Fibras2table = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        Carboidratos1table = new javax.swing.JTextField();
+        Carboidratos2table = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CALCEN");
@@ -221,10 +244,6 @@ private class MinhaClasse3   {
         ));
         jScrollPane4.setViewportView(amostra2);
 
-        jLabel1.setText("Amostra 3");
-
-        jLabel2.setText("Amostra 2");
-
         btnLipidios.setText("Lipídios");
         btnLipidios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +251,39 @@ private class MinhaClasse3   {
             }
         });
 
-        jLabel3.setText("Amostra 1");
+        Umidade1table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Umidade1tableActionPerformed(evt);
+            }
+        });
+
+        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField12ActionPerformed(evt);
+            }
+        });
+
+        InserirAmostra1.setText("Adicionar resultados da amostra 1");
+        InserirAmostra1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InserirAmostra1ActionPerformed(evt);
+            }
+        });
+
+        InserirAmostra2.setText("Adicinar resultado da Amostra2");
+        InserirAmostra2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InserirAmostra2ActionPerformed(evt);
+            }
+        });
+
+        InserirAmostra3.setText("Adicionar resultado Amostra3");
+
+        Fibras2table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Fibras2tableActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -242,74 +293,130 @@ private class MinhaClasse3   {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnUmidade)
-                        .addGap(69, 69, 69)
-                        .addComponent(btnCinzas)
+                        .addGap(336, 336, 336)
+                        .addComponent(jLabel4)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(InserirAmostra2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(418, 418, 418))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(InserirAmostra3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(425, 425, 425))))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(257, 257, 257)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnUmidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Umidade3table)
+                                    .addComponent(Umidade2table)
+                                    .addComponent(Umidade1table, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(89, 89, 89)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Cinzas1table)
+                                    .addComponent(Cinzas2table)
+                                    .addComponent(jTextField6)
+                                    .addComponent(btnCinzas, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(104, 104, 104)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Proteinas1table, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Proteinas2table, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnProteinas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCarboidratos, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(btnFibras)
-                                        .addGap(89, 89, 89)
-                                        .addComponent(btnProteinas)
-                                        .addGap(191, 191, 191))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(btnLipidios, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                                        .addComponent(Lipidios1table))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(Lipidios2table, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)))
+                                .addGap(105, 105, 105)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Fibras1table)
+                                    .addComponent(btnFibras, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                    .addComponent(Fibras2table)
+                                    .addComponent(jTextField4))
+                                .addGap(83, 83, 83)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCarboidratos, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(Carboidratos2table, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Carboidratos1table, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane5)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addComponent(btnLipidios)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 904, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 904, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 904, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(403, 403, 403)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(409, 409, 409)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(259, 259, 259)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(401, 401, 401)
-                        .addComponent(jLabel1)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel3)
+                                .addGap(442, 442, 442))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane6))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(InserirAmostra1)
+                .addGap(413, 413, 413))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel4)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUmidade)
-                    .addComponent(btnCarboidratos)
-                    .addComponent(btnProteinas)
-                    .addComponent(btnFibras)
-                    .addComponent(btnLipidios)
-                    .addComponent(btnCinzas))
-                .addGap(65, 65, 65)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnUmidade)
+                            .addComponent(btnCinzas)
+                            .addComponent(btnProteinas)
+                            .addComponent(btnLipidios)
+                            .addComponent(btnFibras))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Umidade1table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Cinzas1table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Proteinas1table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Lipidios1table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fibras1table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Umidade2table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Cinzas2table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Proteinas2table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Lipidios2table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fibras2table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Umidade3table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCarboidratos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Carboidratos1table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Carboidratos2table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(InserirAmostra1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(InserirAmostra2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
+                .addGap(63, 63, 63)
+                .addComponent(InserirAmostra3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -325,6 +432,10 @@ private class MinhaClasse3   {
         // TODO add your handling code here:
         Umidade frame = new Umidade(this,true);
         frame.setVisible(true);
+        
+        this.Umidade1table.setText(String.valueOf(this.umid.getInserir1()));
+        this.Umidade2table.setText(String.valueOf(this.umid.getInserir2()));
+        this.Umidade3table.setText (String.valueOf(this.umid.getInserir3()));
     }//GEN-LAST:event_btnUmidadeActionPerformed
 
     private void btnCinzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCinzasActionPerformed
@@ -350,6 +461,28 @@ private class MinhaClasse3   {
         Lipidios frame = new Lipidios (this, true);
         frame.setVisible(true);
     }//GEN-LAST:event_btnLipidiosActionPerformed
+
+    private void Umidade1tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Umidade1tableActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Umidade1tableActionPerformed
+
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField12ActionPerformed
+
+    private void InserirAmostra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserirAmostra1ActionPerformed
+       DefaultTableModel dtm = (DefaultTableModel) amostra1.getModel();
+       dtm.addRow(new Object[]{Umidade1table.getText(), Cinzas1table.getText(), Proteinas1table.getText(), Lipidios1table.getText(), Fibras1table.getText(), Carboidratos1table.getText()});
+    }//GEN-LAST:event_InserirAmostra1ActionPerformed
+
+    private void InserirAmostra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserirAmostra2ActionPerformed
+       DefaultTableModel dtm = (DefaultTableModel) amostra2.getModel();
+       dtm.addRow(new Object[]{Umidade2table.getText(), Cinzas2table.getText(), Proteinas2table.getText(), Lipidios2table.getText(), Fibras2table.getText(), Carboidratos2table.getText()});
+    }//GEN-LAST:event_InserirAmostra2ActionPerformed
+
+    private void Fibras2tableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fibras2tableActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Fibras2tableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,6 +520,22 @@ private class MinhaClasse3   {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Carboidratos1table;
+    private javax.swing.JTextField Carboidratos2table;
+    public static javax.swing.JTextField Cinzas1table;
+    private javax.swing.JTextField Cinzas2table;
+    private javax.swing.JTextField Fibras1table;
+    private javax.swing.JTextField Fibras2table;
+    private javax.swing.JButton InserirAmostra1;
+    private javax.swing.JButton InserirAmostra2;
+    private javax.swing.JButton InserirAmostra3;
+    private javax.swing.JTextField Lipidios1table;
+    private javax.swing.JTextField Lipidios2table;
+    private javax.swing.JTextField Proteinas1table;
+    private javax.swing.JTextField Proteinas2table;
+    public static javax.swing.JTextField Umidade1table;
+    private javax.swing.JTextField Umidade2table;
+    private javax.swing.JTextField Umidade3table;
     private javax.swing.JTable amostra1;
     private javax.swing.JTable amostra2;
     private javax.swing.JTable amostra3;
@@ -397,13 +546,16 @@ private class MinhaClasse3   {
     private javax.swing.JButton btnProteinas;
     private javax.swing.JButton btnUmidade;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 
     public void recebeUmidade (String resultado1 ){
