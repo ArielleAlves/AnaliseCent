@@ -5,6 +5,7 @@
  */
 package Interface;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -644,13 +645,24 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnUmidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUmidadeActionPerformed
         // TODO add your handling code here:
-        Umidade frame = new Umidade(this,true);
-        frame.setVisible(true);
-        setResizable(false);
-
        
+       
+        Umidade frame = new Umidade();
+        frame.setModal(true);
+        frame.setVisible(true);
+        //setResizable(false);
+       
+      //  double valorCalculo1 = frame.getResultadoCalculo1();
+       
+        Umidade1table.setText("kkkkjkjkjkj");
     }//GEN-LAST:event_btnUmidadeActionPerformed
 
+    public void teste(){
+        System.out.println("no metodo");
+        Umidade1table.setText("kkkkjkjkjkj");
+    }
+    
+    
     private void btnCinzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCinzasActionPerformed
         // TODO add your handling code here:
         Cinzas frame = new Cinzas (this,true);

@@ -6,7 +6,10 @@
 package Interface;
 
 import Modelo.ModeloJanelas;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,20 +17,21 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author alves
  */
-public class Umidade extends javax.swing.JDialog {
+public class Umidade extends javax.swing.JDialog implements ActionListener{
     private double  inserir1; 
     private double inserir2; 
     private double inserir3;
+    private double resultadoCalculo1;
   
 
 
     /**
      * Creates new form NewJDialog
      */
-    public Umidade(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public Umidade() {
+      
         initComponents();
-        
+        btninserirumidade.add(this);
     }
     
     TelaInicial ti  = new TelaInicial();
@@ -486,6 +490,7 @@ public class Umidade extends javax.swing.JDialog {
 
     private void btninserirumidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninserirumidadeActionPerformed
         // TODO add your handling code here:
+
       
                 
     }//GEN-LAST:event_btninserirumidadeActionPerformed
@@ -592,14 +597,9 @@ public class Umidade extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Umidade dialog = new Umidade(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+               
+                   
+                    
             }
         });
     }
@@ -678,6 +678,29 @@ public class Umidade extends javax.swing.JDialog {
 
     public void setInserir3(double inserir3) {
         this.inserir3 = inserir3;
+    }
+
+    /**
+     * @return the resultadoCalculo1
+     */
+    public double getResultadoCalculo1() {
+        return resultadoCalculo1;
+    }
+
+    /**
+     * @param resultadoCalculo1 the resultadoCalculo1 to set
+     */
+    public void setResultadoCalculo1(double resultadoCalculo1) {
+        this.resultadoCalculo1 = resultadoCalculo1;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+     
+        resultadoCalculo1 =  Double.parseDouble(txtresultado1.getText());
+        dispose();
+    
+    
     }
     
     
