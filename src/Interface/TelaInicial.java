@@ -203,12 +203,11 @@ public class TelaInicial extends javax.swing.JFrame {
        
       //  double valorCalculo1 = frame.getResultadoCalculo1();
        
-        Umidade1table.setText("kkkkjkjkjkj");
+       
     }//GEN-LAST:event_btnUmidadeActionPerformed
 
     public void teste(){
         System.out.println("no metodo");
-        Umidade1table.setText("kkkkjkjkjkj");
     }
     
     
