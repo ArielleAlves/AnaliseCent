@@ -139,9 +139,6 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(328, 328, 328)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
@@ -165,6 +162,10 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(InserirResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(185, 185, 185)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,11 +180,11 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addComponent(btnLipidios1)
                     .addComponent(btnFibras1)
                     .addComponent(btnCarboidratos1))
-                .addGap(61, 61, 61)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(InserirResultados)
                 .addContainerGap())
         );
@@ -244,10 +245,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private void InserirResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserirResultadosActionPerformed
         // TODO add your handling code here:
         
-        DefaultTableModel dtm = (DefaultTableModel) tabelafinal.getModel();
-        dtm.addRow (new Object[] {"1", Umidade1table.getText(), Cinzas1table.getText(), Proteinas1table.getText(), Lipidios1table.getText(), Fibras1table.getText(), Carboidratos1table.getText()});
-        dtm.addRow (new Object[] {"2", Umidade2table.getText(), Cinzas2table.getText(), Proteinas2table.getText(), Lipidios2table.getText(), Fibras2table.getText(), Carboidratos2table.getText()});
-        dtm.addRow (new Object[] {"3", Umidade3table.getText(), Cinzas3table.getText(), Proteinas3table.getText(), Lipidios3table.getText(), Fibras3table.getText(), Carboidratos3table.getText()});
+       
     }//GEN-LAST:event_InserirResultadosActionPerformed
 
     /**
