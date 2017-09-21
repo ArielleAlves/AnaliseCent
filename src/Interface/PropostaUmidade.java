@@ -330,8 +330,9 @@ public class PropostaUmidade extends javax.swing.JDialog {
 
     private void amont(){
         
-        txtAmostra.setText("");
+        txtCadinhoVazio.grabFocus();
         txtCadinhoVazio.setText("");
+        txtAmostra.setText("");
         txtFinal.setText("");
         
         if(contAmostra < 3){
