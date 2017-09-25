@@ -197,7 +197,7 @@ public class TelaInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
        
        
-        Umidade frame = new Umidade();
+        PropostaUmidade frame = new PropostaUmidade(this, true);
         frame.setModal(true);
         frame.setVisible(true);
         //setResizable(false);
