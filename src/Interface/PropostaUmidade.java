@@ -19,14 +19,6 @@ public class PropostaUmidade extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         
-        List<Amostra> list = createAmostBase();
-        
-        for(Amostra a : list){
-            listAmostras.add(a);
-        }
-        
-        amont();
-        
     }
     
     public PropostaUmidade(java.awt.Frame parent, boolean modal, List<Amostra> list) {
@@ -111,6 +103,11 @@ public class PropostaUmidade extends javax.swing.JDialog {
         });
 
         btnConcluir.setText("Concluir");
+        btnConcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConcluirActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Média");
@@ -267,6 +264,24 @@ public class PropostaUmidade extends javax.swing.JDialog {
         
     }//GEN-LAST:event_btnCalcularActionPerformed
 
+    private void btnConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConcluirActionPerformed
+        
+        List<Amostra> resultList = new ArrayList<>();
+        
+        for(Amostra a : listAmostras){
+            
+            int index = a.getId() - 1;
+            a.setUmidade(listAmostraModel.get(index).umidade);
+            
+            resultList.add(a);
+            
+        }
+        
+        TelaInicial.listAmonstra = resultList;
+        this.dispose();
+        
+    }//GEN-LAST:event_btnConcluirActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -407,24 +422,6 @@ public class PropostaUmidade extends javax.swing.JDialog {
         
         int id;
         Double umidade;
-        
-    }
-    
-    private List<Amostra> createAmostBase(){
-    
-        //esse metodo esta aqui apenas para testes
-        //ele deve ser usado na tela principal para criar o vetor base
-        List<Amostra> list = new ArrayList<>();
-        
-        for(int i = 1; i <= 3; i++){
-            
-            Amostra a = new Amostra();
-            a.setId(i);
-            list.add(a);
-            
-        }
-        
-        return list;
         
     }
     
