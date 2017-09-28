@@ -4,6 +4,7 @@ package Interface;
 import Entidades.Amostra;
 import Util.AdvancedMath;
 import Util.AnaCentCalc;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -366,11 +367,13 @@ public class PropostaUmidade extends javax.swing.JDialog {
         modelo.addColumn("Amostra");
         modelo.addColumn("Umidade");
         
+        DecimalFormat df = new DecimalFormat("#,##0.00");
+        
         for(AmostraModel am : listAmostraModel){
             
             modelo.addRow(new Object[]{
                     am.id,
-                    am.umidade
+                    df.format(am.umidade)
                 });
             
         }
@@ -392,9 +395,11 @@ public class PropostaUmidade extends javax.swing.JDialog {
             
         }
         
-        txtMedia.setText(AdvancedMath.calcMedia(values).toString());
-        txtVariancia.setText(AdvancedMath.calcVariancia(values).toString());
-        txtDesvioPadrao.setText(AdvancedMath.calcDesvioPadrao(values).toString());
+        DecimalFormat df = new DecimalFormat("#,##0.00");
+        
+        txtMedia.setText(df.format(AdvancedMath.calcMedia(values)));
+        txtVariancia.setText(df.format(AdvancedMath.calcVariancia(values)));
+        txtDesvioPadrao.setText(df.format(AdvancedMath.calcDesvioPadrao(values)));
         
     }
     
