@@ -1,11 +1,37 @@
 
 package Interface;
 
+import Entidades.Amostra;
+import Util.AdvancedMath;
+import Util.AnaCentCalc;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 public class PropostaProteinas extends javax.swing.JDialog {
 
+    private List<Amostra> listAmostras = new ArrayList<>();
+    private List<AmostraModel> listAmostraModel = new ArrayList<>();
+    private int contAmostra;
+    
     public PropostaProteinas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+    
+    public PropostaProteinas(java.awt.Frame parent, boolean modal, List<Amostra> list) {
+        super(parent, modal);
+        initComponents();
+        
+        for(Amostra a : list){
+            listAmostras.add(a);
+        }
+        
+        contAmostra = 0;
+        
+        amont();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -23,11 +49,11 @@ public class PropostaProteinas extends javax.swing.JDialog {
         btnCalcular = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
-        txtFinal = new javax.swing.JTextField();
-        txtAmostra = new javax.swing.JTextField();
+        txtVolume = new javax.swing.JTextField();
+        txtFatorConexao = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtCadinhoVazio = new javax.swing.JTextField();
+        txtAmostra = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         labelAmostra = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -80,9 +106,9 @@ public class PropostaProteinas extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(table);
 
-        txtFinal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtVolume.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
-        txtAmostra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtFatorConexao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setText("Volume");
@@ -90,7 +116,7 @@ public class PropostaProteinas extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel3.setText("Fator de Conexão");
 
-        txtCadinhoVazio.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtAmostra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("P. Amostra");
@@ -116,8 +142,8 @@ public class PropostaProteinas extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtFinal)
-                            .addComponent(txtAmostra, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtVolume)
+                            .addComponent(txtFatorConexao, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelAmostra, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +152,7 @@ public class PropostaProteinas extends javax.swing.JDialog {
                                 .addComponent(btnConcluir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnCalcular))
-                            .addComponent(txtCadinhoVazio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAmostra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -165,15 +191,15 @@ public class PropostaProteinas extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCadinhoVazio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAmostra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAmostra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtFatorConexao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnCalcular)
@@ -203,7 +229,7 @@ public class PropostaProteinas extends javax.swing.JDialog {
         for(Amostra a : listAmostras){
 
             int index = a.getId() - 1;
-            a.setUmidade(listAmostraModel.get(index).umidade);
+            a.setProteinas(listAmostraModel.get(index).proteinas);
 
             resultList.add(a);
 
@@ -215,11 +241,11 @@ public class PropostaProteinas extends javax.swing.JDialog {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
 
-        String txtCadinhoVazio = this.txtCadinhoVazio.getText();
         String txtAmostra = this.txtAmostra.getText();
-        String txtFinal = this.txtFinal.getText();
+        String txtFatorConexao = this.txtFatorConexao.getText();
+        String txtVolume = this.txtVolume.getText();
 
-        if(txtCadinhoVazio.isEmpty() || txtAmostra.isEmpty() || txtFinal.isEmpty()){
+        if(txtAmostra.isEmpty() || txtFatorConexao.isEmpty() || txtVolume.isEmpty()){
 
             System.err.println("Preencha todos os campos!");
 
@@ -227,13 +253,13 @@ public class PropostaProteinas extends javax.swing.JDialog {
 
             try{
 
-                Double pCadinho = Double.parseDouble(txtCadinhoVazio);
-                Double pAmostra = Double.parseDouble(txtAmostra);
-                Double pFinal = Double.parseDouble(txtFinal);
+                Double pAmotra = Double.parseDouble(txtAmostra);
+                Double factConex = Double.parseDouble(txtFatorConexao);
+                Double vol = Double.parseDouble(txtVolume);
 
                 AmostraModel am = new AmostraModel();
                 am.id = contAmostra + 1;
-                am.umidade = AnaCentCalc.calcUmidade(pCadinho, pAmostra, pFinal);
+                am.proteinas = AnaCentCalc.calcProteinas(pAmotra, factConex, vol);
 
                 listAmostraModel.add(am);
                 contAmostra++;
@@ -251,9 +277,6 @@ public class PropostaProteinas extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -309,10 +332,92 @@ public class PropostaProteinas extends javax.swing.JDialog {
     private javax.swing.JLabel labelAmostra;
     private javax.swing.JTable table;
     private javax.swing.JTextField txtAmostra;
-    private javax.swing.JTextField txtCadinhoVazio;
     private javax.swing.JTextField txtDesvioPadrao;
-    private javax.swing.JTextField txtFinal;
+    private javax.swing.JTextField txtFatorConexao;
     private javax.swing.JTextField txtMedia;
     private javax.swing.JTextField txtVariancia;
+    private javax.swing.JTextField txtVolume;
     // End of variables declaration//GEN-END:variables
+
+    private void amont(){
+        
+        txtAmostra.grabFocus();
+        txtAmostra.setText("");
+        txtFatorConexao.setText("");
+        txtVolume.setText("");
+        
+        if(contAmostra < 3){
+            
+            labelAmostra.setText("Amostra "+(contAmostra+1));
+            btnConcluir.setEnabled(false);
+            btnCalcular.setEnabled(true);
+            
+        }else{
+            
+            //meta de 3 alançada
+            btnConcluir.setEnabled(true);
+            btnCalcular.setEnabled(false);
+            
+            txtAmostra.setEnabled(false);
+            txtFatorConexao.setEnabled(false);
+            txtVolume.setEnabled(false);
+            
+            calc();
+            
+        }
+        
+        updateTable();
+        
+    }
+    
+    private void updateTable(){
+        
+        DefaultTableModel modelo = new DefaultTableModel();
+        
+        modelo.addColumn("Amostra");
+        modelo.addColumn("Proteínas");
+        
+        DecimalFormat df = new DecimalFormat("#,##0.00");
+        
+        for(AmostraModel am : listAmostraModel){
+            
+            modelo.addRow(new Object[]{
+                    am.id,
+                    df.format(am.proteinas)
+                });
+            
+        }
+        
+        table.setModel(modelo);
+        
+    }
+    
+    private void calc(){
+        
+        double values[] = new double[3];
+        
+        int i = 0;
+        
+        for(AmostraModel am : listAmostraModel){
+        
+            values[i] = am.proteinas;
+            i++;
+            
+        }
+        
+        DecimalFormat df = new DecimalFormat("#,##0.00");
+        
+        txtMedia.setText(df.format(AdvancedMath.calcMedia(values)));
+        txtVariancia.setText(df.format(AdvancedMath.calcVariancia(values)));
+        txtDesvioPadrao.setText(df.format(AdvancedMath.calcDesvioPadrao(values)));
+        
+    }
+
+    private class AmostraModel{
+        
+        int id;
+        Double proteinas;
+        
+    }
+    
 }

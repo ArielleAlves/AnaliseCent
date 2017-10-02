@@ -1,5 +1,6 @@
 package Interface;
 
+import bkp.Carboidratos;
 import bkp.Cinzas;
 import bkp.Lipidios;
 import bkp.Fibras;
@@ -40,7 +41,6 @@ public class TelaInicial extends javax.swing.JFrame {
         btnFibras1 = new javax.swing.JButton();
         btnCarboidratos1 = new javax.swing.JButton();
         btnLipidios1 = new javax.swing.JButton();
-        InserirResultados = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tabelafinal = new javax.swing.JTable();
@@ -105,13 +105,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        InserirResultados.setText("Adicionar na Tabela");
-        InserirResultados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InserirResultadosActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Resultado das amostras");
 
         tabelafinal.setModel(new javax.swing.table.DefaultTableModel(
@@ -148,18 +141,15 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addComponent(btnFibras1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCarboidratos1)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(InserirResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addGap(0, 44, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(190, 190, 190))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane7)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,9 +167,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(InserirResultados)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -201,20 +189,25 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnCinzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCinzasActionPerformed
         // TODO add your handling code here:
-        Cinzas frame = new Cinzas(this, true);
+        PropostaCinzas frame = new PropostaCinzas(this, true, listAmonstra);
         frame.setVisible(true);
+        updateTable();
+        
     }//GEN-LAST:event_btnCinzasActionPerformed
 
     private void btnProteinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProteinasActionPerformed
         // TODO add your handling code here:
-        Proteinas frame = new Proteinas(this, true);
+        PropostaProteinas frame = new PropostaProteinas(this, true, listAmonstra);
         frame.setVisible(true);
+        updateTable();
     }//GEN-LAST:event_btnProteinasActionPerformed
 
     private void btnFibras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFibras1ActionPerformed
         // TODO add your handling code here:
-        Fibras frame = new Fibras(this, true);
+        PropostaFibras frame = new PropostaFibras(this, true, listAmonstra);
         frame.setVisible(true);
+        updateTable();
+        
     }//GEN-LAST:event_btnFibras1ActionPerformed
 
     private void btnCarboidratos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarboidratos1ActionPerformed
@@ -225,15 +218,11 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnLipidios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLipidios1ActionPerformed
         // TODO add your handling code here:
-        Lipidios frame = new Lipidios(this, true);
+        PropostaLipidios frame = new PropostaLipidios(this, true, listAmonstra);
         frame.setVisible(true);
+        updateTable();
+        
     }//GEN-LAST:event_btnLipidios1ActionPerformed
-
-    private void InserirResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserirResultadosActionPerformed
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_InserirResultadosActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -268,7 +257,6 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton InserirResultados;
     private javax.swing.JButton btnCarboidratos1;
     private javax.swing.JButton btnCinzas;
     private javax.swing.JButton btnFibras1;

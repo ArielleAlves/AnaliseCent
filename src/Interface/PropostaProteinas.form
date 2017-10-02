@@ -35,8 +35,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txtFinal" alignment="1" max="32767" attributes="0"/>
-                          <Component id="txtAmostra" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtVolume" alignment="1" max="32767" attributes="0"/>
+                          <Component id="txtFatorConexao" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="labelAmostra" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -46,7 +46,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnCalcular" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtCadinhoVazio" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                          <Component id="txtAmostra" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
@@ -95,15 +95,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtCadinhoVazio" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAmostra" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtAmostra" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFatorConexao" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtFinal" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtVolume" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btnCalcular" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -221,14 +221,14 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="txtFinal">
+    <Component class="javax.swing.JTextField" name="txtVolume">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAmostra">
+    <Component class="javax.swing.JTextField" name="txtFatorConexao">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="0"/>
@@ -251,7 +251,7 @@
         <Property name="text" type="java.lang.String" value="Fator de Conex&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCadinhoVazio">
+    <Component class="javax.swing.JTextField" name="txtAmostra">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="0"/>
