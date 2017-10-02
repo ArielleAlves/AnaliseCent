@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interface;
+package bkp;
 
 /**
  *
@@ -136,7 +136,6 @@ public class Fibras extends javax.swing.JDialog {
         });
 
         jLabel26.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Fibras");
 
         jLabel24.setText("P. Final");

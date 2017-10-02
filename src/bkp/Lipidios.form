@@ -200,12 +200,14 @@
                   </Group>
               </Group>
               <EmptySpace pref="23" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnDesvioPadraoUmidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDesvioPadraoLipidios" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="btnmedialip" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtmedialip" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnDesvioPadraoUmidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDesvioPadraoLipidios" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -229,9 +231,6 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="24" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Lip&#xed;dios"/>
       </Properties>

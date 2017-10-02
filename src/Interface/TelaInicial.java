@@ -1,5 +1,9 @@
 package Interface;
 
+import bkp.Cinzas;
+import bkp.Lipidios;
+import bkp.Fibras;
+import bkp.Proteinas;
 import Entidades.Amostra;
 import java.text.DecimalFormat;
 import java.util.ArrayList;

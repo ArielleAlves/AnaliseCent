@@ -148,16 +148,18 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtPAmostra1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtFatorConexao" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtVolume" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="btnCalcularprot1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCalcularProt1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtPAmostra1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFatorConexao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtVolume" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -191,12 +193,14 @@
                   </Group>
               </Group>
               <EmptySpace pref="24" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnDesvioPadraoProteinas" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDesvioPadraoProteinas" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="txtMediaProt" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnMediaProt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnDesvioPadraoProteinas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDesvioPadraoProteinas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -300,9 +304,6 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="24" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Prote&#xed;nas"/>
       </Properties>

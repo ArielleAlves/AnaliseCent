@@ -1,86 +1,71 @@
 
 package Interface;
 
-import Entidades.Amostra;
-import Util.AdvancedMath;
-import Util.AnaCentCalc;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
+public class PropostaProteinas extends javax.swing.JDialog {
 
-public class PropostaUmidade extends javax.swing.JDialog {
-
-    private List<Amostra> listAmostras = new ArrayList<>();
-    private List<AmostraModel> listAmostraModel = new ArrayList<>();
-    private int contAmostra;
-    
-    public PropostaUmidade(java.awt.Frame parent, boolean modal) {
+    public PropostaProteinas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
-    }
-    
-    public PropostaUmidade(java.awt.Frame parent, boolean modal, List<Amostra> list) {
-        
-        super(parent, modal);
-        initComponents();
-        
-        for(Amostra a : list){
-            listAmostras.add(a);
-        }
-        
-        contAmostra = 0;
-        
-        amont();
-        
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelAmostra = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtCadinhoVazio = new javax.swing.JTextField();
-        txtAmostra = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtFinal = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        txtDesvioPadrao = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtVariancia = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtMedia = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnConcluir = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
-        btnCalcular = new javax.swing.JButton();
-        btnConcluir = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel5 = new javax.swing.JLabel();
-        txtMedia = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtVariancia = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txtDesvioPadrao = new javax.swing.JTextField();
+        txtFinal = new javax.swing.JTextField();
+        txtAmostra = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtCadinhoVazio = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        labelAmostra = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setResizable(false);
 
-        labelAmostra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        labelAmostra.setText("Amostra 1");
+        txtDesvioPadrao.setEditable(false);
+        txtDesvioPadrao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setText("P. Cadinho Vazio");
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setText("Desvio Padrão");
 
-        txtCadinhoVazio.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtVariancia.setEditable(false);
+        txtVariancia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
-        txtAmostra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("Variancia");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel3.setText("P. Amostra");
+        txtMedia.setEditable(false);
+        txtMedia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
-        txtFinal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("Média");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel4.setText("P. Final");
+        btnConcluir.setText("Concluir");
+        btnConcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConcluirActionPerformed(evt);
+            }
+        });
+
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,40 +80,26 @@ public class PropostaUmidade extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(table);
 
-        btnCalcular.setText("Calcular");
-        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcularActionPerformed(evt);
-            }
-        });
+        txtFinal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
-        btnConcluir.setText("Concluir");
-        btnConcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConcluirActionPerformed(evt);
-            }
-        });
+        txtAmostra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Média");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel4.setText("Volume");
 
-        txtMedia.setEditable(false);
-        txtMedia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel3.setText("Fator de Conexão");
+
+        txtCadinhoVazio.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel2.setText("P. Amostra");
+
+        labelAmostra.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        labelAmostra.setText("Amostra 1");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setText("Umidade");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("Variancia");
-
-        txtVariancia.setEditable(false);
-        txtVariancia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setText("Desvio Padrão");
-
-        txtDesvioPadrao.setEditable(false);
-        txtDesvioPadrao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setText("Proteínas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,7 +211,6 @@ public class PropostaUmidade extends javax.swing.JDialog {
 
         TelaInicial.listAmonstra = resultList;
         this.dispose();
-
     }//GEN-LAST:event_btnConcluirActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
@@ -279,9 +249,11 @@ public class PropostaUmidade extends javax.swing.JDialog {
             }
 
         }
-
     }//GEN-LAST:event_btnCalcularActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -296,20 +268,20 @@ public class PropostaUmidade extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PropostaUmidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropostaProteinas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PropostaUmidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropostaProteinas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PropostaUmidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropostaProteinas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PropostaUmidade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropostaProteinas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                PropostaUmidade dialog = new PropostaUmidade(new javax.swing.JFrame(), true);
+                PropostaProteinas dialog = new PropostaProteinas(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -343,86 +315,4 @@ public class PropostaUmidade extends javax.swing.JDialog {
     private javax.swing.JTextField txtMedia;
     private javax.swing.JTextField txtVariancia;
     // End of variables declaration//GEN-END:variables
-
-    private void amont(){
-        
-        txtCadinhoVazio.grabFocus();
-        txtCadinhoVazio.setText("");
-        txtAmostra.setText("");
-        txtFinal.setText("");
-        
-        if(contAmostra < 3){
-            
-            labelAmostra.setText("Amostra "+(contAmostra+1));
-            btnConcluir.setEnabled(false);
-            btnCalcular.setEnabled(true);
-            
-        }else{
-            
-            //meta de 3 alançada
-            btnConcluir.setEnabled(true);
-            btnCalcular.setEnabled(false);
-            
-            txtCadinhoVazio.setEnabled(false);
-            txtAmostra.setEnabled(false);
-            txtFinal.setEnabled(false);
-            
-            calc();
-            
-        }
-        
-        updateTable();
-        
-    }
-    
-    private void updateTable(){
-        
-        DefaultTableModel modelo = new DefaultTableModel();
-        
-        modelo.addColumn("Amostra");
-        modelo.addColumn("Umidade");
-        
-        DecimalFormat df = new DecimalFormat("#,##0.00");
-        
-        for(AmostraModel am : listAmostraModel){
-            
-            modelo.addRow(new Object[]{
-                    am.id,
-                    df.format(am.umidade)
-                });
-            
-        }
-        
-        table.setModel(modelo);
-        
-    }
-    
-    private void calc(){
-        
-        double values[] = new double[3];
-        
-        int i = 0;
-        
-        for(AmostraModel am : listAmostraModel){
-        
-            values[i] = am.umidade;
-            i++;
-            
-        }
-        
-        DecimalFormat df = new DecimalFormat("#,##0.00");
-        
-        txtMedia.setText(df.format(AdvancedMath.calcMedia(values)));
-        txtVariancia.setText(df.format(AdvancedMath.calcVariancia(values)));
-        txtDesvioPadrao.setText(df.format(AdvancedMath.calcDesvioPadrao(values)));
-        
-    }
-    
-    private class AmostraModel{
-        
-        int id;
-        Double umidade;
-        
-    }
-    
 }
