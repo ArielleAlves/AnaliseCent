@@ -1,7 +1,7 @@
 package Interface;
 
-import bkp.Carboidratos;
 import Entidades.Amostra;
+import Util.AnaCentCalc;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -103,6 +103,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel1.setText("Resultado das amostras");
 
+        tabelafinal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         tabelafinal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -113,6 +114,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 "Amostra", "Umidade", "Cinzas", "Proteínas", "Lipídios", "Fibras", "Carboidratos"
             }
         ));
+        tabelafinal.setRowHeight(30);
         jScrollPane7.setViewportView(tabelafinal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -208,8 +210,48 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnCarboidratos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarboidratos1ActionPerformed
         // TODO add your handling code here:
-        Carboidratos frame = new Carboidratos(this, true);
-        frame.setVisible(true);
+        
+        boolean pass = false;
+        
+        for(Amostra a : listAmonstra){
+            
+            if(a.getFibras() == null || 
+                    a.getCinzas() == null ||
+                    a.getLipidios() == null ||
+                    a.getProteinas() == null ||
+                    a.getUmidade() == null){
+                
+                pass = false;
+                break;
+                
+            }else{
+                
+                pass = true;
+                
+            }
+            
+        }
+        
+        if(pass){
+            
+            for(Amostra a : listAmonstra){
+                
+                Double carb = AnaCentCalc.calcCarboidratos(a.getProteinas(),
+                        a.getFibras(),a.getLipidios(),a.getUmidade(),a.getCinzas());
+                
+                a.setCarboidratos(carb);
+                
+            }
+            
+            updateTable();
+            
+        }else{
+            
+            System.err.println("Falta dados!");
+            //mensagem de erro
+            
+        }
+        
     }//GEN-LAST:event_btnCarboidratos1ActionPerformed
 
     private void btnLipidios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLipidios1ActionPerformed
