@@ -318,13 +318,13 @@ public class TelaInicial extends javax.swing.JFrame {
         
         DefaultTableModel modelo = new DefaultTableModel();
 
-        modelo.addColumn("Amostra");
-        modelo.addColumn("Umidade");
-        modelo.addColumn("Cinzas");
-        modelo.addColumn("Proteínas");
-        modelo.addColumn("Lipídios");
-        modelo.addColumn("Fibras");
-        modelo.addColumn("Carboidratos");
+        modelo.addColumn("Amostra %");
+        modelo.addColumn("Umidade %");
+        modelo.addColumn("Cinzas %");
+        modelo.addColumn("Proteínas %");
+        modelo.addColumn("Lipídios %");
+        modelo.addColumn("Fibras %");
+        modelo.addColumn("Carboidratos %");
 
         for (Amostra a : listAmonstra) {
 
@@ -353,10 +353,9 @@ public class TelaInicial extends javax.swing.JFrame {
         } else {
 
             DecimalFormat df = new DecimalFormat("#,##0.00");
-            return df.format(value) + "%";
+            return df.format(value);
 
         }
-
     }
 
     private List<Amostra> createAmostBase() {
